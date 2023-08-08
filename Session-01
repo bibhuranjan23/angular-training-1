@@ -1,0 +1,66 @@
+//Dense Array
+var arr = [1, 2, 3, 4]; 
+console.log(typeof arr);
+console.log(arr.length);
+console.log(arr);
+//Different Ways to Create Parse Array 
+
+//Way-1
+const arr1 = [];
+const arr2 = [1,2,,,5,6];
+console.log(arr2.length);
+//Way-2
+const arr3 = new Array(5);
+console.log(arr3);
+console.log(arr3.length);
+//Way-3
+const arr4 = [10,20,40,50];
+console.log(arr4);
+console.log(arr4.length);
+delete arr4[1];
+console.log(arr4);
+console.log(arr4.length);
+
+//Way-4
+arr4.length = 100;
+console.log(arr4);
+console.log(arr4.length);
+
+
+//Copy an Array
+var arr7 = [1, 2, 3, 4]; 
+var arr8 = arr7 ;
+console.log(arr7);
+console.log(arr8);
+arr8[0] = 20;
+console.log(arr7);
+
+//Proper ways to copy an Array
+var arr10 = [1, 2, 3, 4]; 
+var arr20 = arr10.slice(); 
+var arr30 = [...arr10]; 
+var arr40 = Array.from(arr10); 
+arr20[0] = 5; 
+arr30[0] = 6; 
+arr40[0] = 7; 
+console.log(arr10); 
+console.log(arr20); 
+console.log(arr30); 
+console.log(arr40); 
+
+//Properties of An Array : length ,Prototype
+
+Array.prototype.myproperty = "testing"
+const arr12 =[]
+console.log(arr12)
+console.log(arr12.myproperty);
+
+//Methods in an Array
+const arr15 = [];
+arr15.push('India');
+arr15.push('Pakistan');
+console.log(arr15);
+arr15.pop();
+console.log(arr15);
+
+
