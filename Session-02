@@ -1,0 +1,120 @@
+//Functions are First Class Citizen in Javascript
+//We can add prototype of a function and use that prototype 
+function fun1(){};
+console.log(fun1);
+console.log(typeof fun1);
+fun1.prototype ="Testing";
+console.log(fun1.prototype);
+
+
+//Passing function as parameter in js function
+function fnCaller(fn) {
+    fn();
+}
+function log() {
+    console.log('Calling log');
+}
+fnCaller(log); 
+-------------------------------------------------------------------
+//Example of callback function
+
+function multiply(x, y) {
+    return x * y;
+}
+
+ function callMultiply(fn, val1, val2) {
+     return fn(val1,val2);
+}
+
+
+ let result = callMultiply(multiply,5,4);
+
+console.log(result);
+
+------------------------------------------------------------------------
+
+Array map() function and uses  :
+--------------------------------
+Example-1 :
+const arr = [10,20,30,40];
+const arr2 = arr.map(a => Math.pow(a,2));
+console.log(arr);
+console.log(arr2);
+
+
+Example-2 :
+let map = Array.prototype.map
+let a = map.call('ABCD', function(x) { 
+  return x.charCodeAt(0)
+})
+console.log(a);
+
+Example-3 :
+
+let numbers = [3, 25, 100]
+let roots = numbers.map(function(num) {
+    return Math.sqrt(num)
+})
+console.log(numbers);
+console.log(roots);
+------------------------------------------------------------------------------------
+
+Reduce Function :
+----------------
+
+
+Example-1 :
+
+var arr55 = ['H', 'E', 'L','L', 'O']; 
+var val = arr55.reduce(function (prev, curr){
+   return  prev + curr; 
+},'HI '); 
+console.log("arr:",arr55); 
+console.log("reduced val:", val); 
+
+Example-2 :
+//Grouping People by the age Property
+let flattened = [[0, 1], [2, 3], [4, 5]].reduce( function(accumulator, currentValue) 
+{ 
+    return accumulator.concat(currentValue) 
+}, [ ] )
+
+console.log(flattened);
+
+Example-3 :
+
+let people = [
+  { name: 'Matt', age: 25 },
+  { name: 'Asma ', age: 23 },
+  { name: 'Alok ', age: 23 },
+  { name: 'Cami ', age: 29 },
+  { name: 'Cami1 ', age: 29 },
+  { name: 'Cami2 ', age: 29 }
+];
+
+function groupBy ( objectArray , property) {
+  return  objectArray.reduce(function (acc, obj) {
+    let key = obj [property]
+    if (!acc [key]) {
+      acc [key] = []
+    }
+    acc[key].push(obj)
+    return acc
+  }, {})
+}
+
+let groupedPeople = groupBy(people, 'age')
+
+console.log(groupedPeople);
+------------------------------------------------------------------------------------
+
+var arr44 = ['Hello', 1, true, NaN, 'Bye']; 
+var countArr = arr44.map( function (ele){
+   return  typeof ele === 'string' ? 1 : 0
+}); 
+var sum = countArr.reduce( function(prev, curr){
+    return prev + curr
+}); 
+
+console.log(sum);
+
