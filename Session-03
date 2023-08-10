@@ -1,0 +1,185 @@
+Scope Of Variable :
+------------------
+
+Example - 1 :
+
+var count=1;
+
+console.log(count);
+
+function test()
+{
+    var x = 5;
+    console.log(5);
+    if(true)
+    {
+      var p =8;
+      let y=9;
+      console.log(y);
+      console.log(p);
+    }
+   // console.log(y);
+    console.log(p);
+}
+
+
+test();
+
+//console.log(x);
+
+
+Example -2
+----------
+
+"use strict"
+function getCounter() { 
+const PI;
+return counter; 
+} 
+console.log(getCounter());
+
+
+Example-3
+---------
+const PI=3.141;
+
+console.log(PI);
+
+//PI =4.5;
+
+//console.log(PI);
+
+const arr = [];
+
+arr.push(20);
+arr.push(30);
+console.log(arr);
+arr[1]=50;
+
+
+Example-4
+-----------
+"use strict"
+a=9;
+var a ;
+console.log(a);
+
+func();
+function func() {
+    var a = 1;
+    var b = 2;
+    var c = 3;
+    console.log(a + " " + b + " " + c);
+}
+
+Argument Object Inside Function
+--------------------------------
+Example -1 :
+
+function show(name)
+{
+    console.log(name);
+}
+
+function sum(n1,n2)
+{
+    console.log(arguments);
+    console.log(arguments.length);
+    console.log(typeof arguments);
+    console.log(Array.isArray(arguments))
+    return n1+n2;
+}
+
+show("Alok");
+
+let res = sum(5,6,10,20);
+console.log(res);
+
+
+Function in JS
+----------------
+
+Example -1
+-----------
+function sum(n1,n2)
+{
+    return n1+n2;
+}
+
+let add = sum;
+
+console.log(typeof sum);
+console.log(sum.prototype);
+
+
+Example -2
+----------
+function  show(fun,name)
+{
+    fun(name);
+}
+
+function abc(str)
+{
+    console.log("Hi "+str);
+}
+
+show(abc,"Alok");
+
+Example -3
+----------
+function test()
+{
+    return function(){
+        return  500;
+    }
+}
+
+let t = test();
+
+console.log(t);
+
+console.log(t());
+
+Example-4 (Anonymous Function)
+-------------------------------
+
+function test()
+{
+    return function(){
+        return  500;
+    }
+}
+
+let t = test();
+
+console.log(t);
+
+console.log(t());
+
+
+Example -5 
+---------
+setTimeout (function() {
+    console.log('Execute later after 1 second')
+}, 5000);
+
+
+Example -6 (Default argument in JS)
+-------------------------------------
+
+function sum(n1=0,n2=0)
+{
+    return n1+n2;
+}
+
+console.log(sum());
+console.log(sum(10,20));
+
+
+
+
+
+
+
+
