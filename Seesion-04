@@ -1,0 +1,184 @@
+
+
+********************************ARROW FUNCTION **************************************
+
+EXAMPLE-1 :
+---------
+
+const show = function(){
+    console.log('Hello');
+}
+
+show();
+
+const showArrow = () => {console.log('Hello'); }
+
+showArrow()
+
+
+
+
+EXAMPLE-2 :
+---------
+
+const add = function (a,b){
+    return a+b;
+}
+
+add(4,5);
+
+const addarr= (a,b)=>{
+    return a+b;
+}
+
+const mul = (a,b)=>a*b;
+
+console.log(mul(4,5));
+
+
+EXAMPLE-3 :
+----------
+
+const arr =[2,4,6];
+
+const sqr = arr.map((a)=> a**2);
+
+console.log(sqr);
+
+
+EXAMPLE-4 :
+-----------
+
+const Person ={
+    name:'Alok',
+    greet:function(){
+         setTimeout(()=>{
+             console.log(`Hello ,I'm ${this.name}`);
+         },1000);
+    }
+}
+
+Person.greet();
+
+
+
+********************************USE OF this Keyword in JS **************************************
+EXAMPLE -1 
+----------
+
+ // console.log(this);
+
+ // function test()
+ // {
+ //     console.log(this);
+ // }
+
+ // test();
+
+ const obj ={
+
+     prop:'Welcome',
+     fun:function(){
+         console.log(this);
+     },
+
+     arrfunObj:()=>{
+     console.log(this);
+    }
+ }
+
+obj.fun();
+obj.arrfunObj();
+
+//  const arrfun = () =>{
+//      console.log(this);
+//  }
+
+// arrfun();
+
+
+********************************METHODS AND PROPERTIES OF FUNCTION **************************************
+Example -1
+----------
+
+const mul=function (n1,n2,n3,n4){
+    return n1*n2;
+}
+
+console.log(mul.length);
+
+console.log(mul.prototype);
+
+
+-----------------------------------------
+apply() ,call() and bind() Methods in JS
+-------------------------------------------
+
+------------
+Example -1 :
+------------
+
+let cat = { type: 'Cat', sound: 'Meow' };
+let dog = { type: 'Dog', sound: 'Woof' };
+
+const say = function (message) {
+  console.log(message);
+  console.log(this);
+  console.log( this.type + ' says ' + this.sound);
+};
+
+say('Dog')
+
+say.apply(cat,['What does a cat say?']);
+say.apply(dog,['What does a dog say?']);
+
+say.call(cat, 'What does a cat say?');
+say.call(dog, 'What does a dog say?');
+
+
+------------
+Example -2 :
+------------
+const Person ={
+    name:'Alok',
+    greet:function(message){
+        console.log(`${message} ${this.name}`);
+    }
+}
+
+const greetFunct = Person.greet.bind(Person);
+
+greetFunct('Hello');
+
+const otherPerson ={
+     name:'Asish'
+}
+
+
+greetFunct.call(otherPerson,'Hi');
+
+
+
+------------
+Example -3  :
+------------
+const Person ={
+    name:'Alok',
+    greet:function(message){
+        console.log(`${message} ${this.name}`);
+    }
+}
+
+const greetFunct = Person.greet('hello');
+
+greetFunct('Hello');
+
+const otherPerson ={
+     name:'Asish'
+}
+
+greetFunct.call(otherPerson,'Hi');
+
+
+
+
