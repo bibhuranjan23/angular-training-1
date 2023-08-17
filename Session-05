@@ -1,1 +1,203 @@
+Clouser In JavaScript
+---------------------
+Example-1 :
+
+function greeting() {
+    let message = 'Hi';
+    function sayHi() {
+        console.log(message);
+    }
+    sayHi();
+}
+greeting();
+
+Example -2
+-----------
+function greeting() { 
+
+let message = 'Hi'; 
+
+function sayHi() 
+{ 
+   console.log(message); 
+} 
+return sayHi; 
+} 
+let hi = greeting(); 
+console.log(hi); 
+hi();
+
+
+Example-3
+---------
+
+function greeting(message) 
+{ 
+   return function(name){ 
+       return message + ' ' + name; 
+   } 
+} 
+let sayHi = greeting('Hi'); 
+let sayHello = greeting('Hello'); 
+console.log(sayHi('John')); 
+console.log(sayHello('John')); 
+
+Var ,Const and let Keyword :
+--------------------------
+
+Example -1
+
+for (var index = 1; index <= 3; index++) 
+{ 
+  setTimeout(function (){ 
+      console.log('after ' + index + ' second(s):' + index);     
+    },index * 1000); 
+}
+
+
+Example-2
+------
+for (var index = 1; index <= 3; index++) 
+{ 
+  (function (index) 
+  { 
+    setTimeout(function (){ 
+    console.log('after ' + index + ' second(s):' + index);    
+    }, index * 1000); 
+  })(index); 
+}
+
+Example-3
+--------
+for (let index = 1; index <= 3; index++) 
+{ 
+  setTimeout(function (){ 
+      console.log('after ' + index + ' second(s):' + index);     
+    },index * 1000); 
+}
+
+Constructor Function  in Javascript  use to Create Object :
+
+--------------------------------------------------------------
+
+Example-1 :
+---------
+
+const calculator = (function() {
+     let result = 0;
+  function add(a, b) {
+    result = a + b;
+  }
+  function getResult() {
+    return result;
+  }
+  return {
+    add,
+    getResult
+  };
+})();
+calculator.add(5, 3);
+console.log( calculator.getResult()); // Output: 8
+
+Example-2
+-----------
+
+function createCounter() {
+  let count = 0;
+  function increment() {
+    count++;
+  }
+  function getCount() {
+    return count;
+  }
+  return {
+    increment,
+    getCount
+  };
+}
+const counter = createCounter();
+console.log(counter.getCount()); // Output: 0
+counter.increment();
+counter.increment();
+console.log(counter.getCount()); // Output: 2
+
+
+Example-3
+----------
+
+let Employee ={
+    FName :'Alok',
+    LName :'Kumar',
+    Salary:50000,
+    
+}
+
+Employee.getName = function(){
+    console.log(this.FName +' '+this.LName);
+}
+
+function getSalary()
+{
+    console.log(this.Salary);
+}
+
+Employee.getSal =getSalary; 
+console.log(Employee);
+Employee.getName();
+Employee.getSal();
+
+Example-4
+---------
+let Employee ={
+    FName :'Alok',
+    LName :'Kumar',
+    Salary:50000,
+    getName()
+    {
+         console.log(this.FName+' '+this.LName);   
+    },
+    getSalary:function(){
+        console.log(this.Salary);  
+    }
+
+    
+}
+
+Employee.getName();
+Employee.getSalary();
+
+Example-5
+--------
+function PersonA(firstName, lastName) 
+ { 
+     this.FirstName = firstName;       
+     this.LastName = lastName; 
+ }
+let person1 = new PersonA('Jane','Doe')
+
+let person2 = new PersonA('James','Smith')
+
+Example-6
+----------
+
+function PersonA(firstName, lastName) 
+{ 
+     this.FirstName = firstName;       
+     this.LastName = lastName; 
+     this.getFullName = function () 
+     { 
+	    return this.FirstName + " " + this.LastName; 
+     };
+}
+let person1 = new PersonA('Jane','Doe')
+
+let person2 = new PersonA('James','Smith')
+
+console.log(person1.getFullName());
+console.log(person2.getFullName());
+
+Example-7
+---------
+
+
 
